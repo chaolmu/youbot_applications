@@ -91,16 +91,16 @@ int main(int argc, char *argv[]) {
     }
 
 
-    std::string configfilepath = "../config";
+    std::string configfilepath = "/home/chao/catkin_ws/src/youbot_applications/joint_configurator/config";
 
-    configfilepath = std::string(CONFIG_DIR);
+//    configfilepath = std::string(CONFIG_DIR);
 
     if (argc == 2) {
       configfilepath = argv[1];
     }
 
 
-    YouBotManipulator myYouBotManipulator("/youbot-manipulator", YOUBOT_CONFIGURATIONS_DIR);
+    YouBotManipulator myYouBotManipulator("youbot-manipulator", YOUBOT_CONFIGURATIONS_DIR);
 
 
     JointConfigurator joint1(&(myYouBotManipulator.getArmJoint(1)), configfilepath, "arm-1.cfg", "");
